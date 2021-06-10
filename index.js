@@ -1396,7 +1396,7 @@ const findChannel = (channelName) =>{
 // Encender server
 (async () => {
   // Start the app
-  await app.start(8000);
+  await app.start(process.env.PORT || 3000);
   console.log('⚡️ Bolt app is running!');
 })();
 
