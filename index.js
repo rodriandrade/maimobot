@@ -5,15 +5,12 @@ const fs = require('fs');
 let users;
 let channels;
 
-console.log(process.env.SLACK_SIGNING_SECRET);
-console.log(process.env.SLACK_BOT_TOKEN);
-
 const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
   token: process.env.SLACK_BOT_TOKEN,
 });
 
-// ESTRUCTURAS DE MENSAJES PARA ENVIAR
+// Estructuras de mensajes para enviar 
 const calendar = {
 	"blocks": [
     {
@@ -163,7 +160,7 @@ const calendar = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver el calendario académico del 2021 nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot calendario` "
+				"text": ":robot_face: Si necesitas volver a ver el calendario académico del 2021 nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/calendario` "
 			}
 		}
 	]
@@ -236,7 +233,7 @@ const reglas = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver las reglas de la comunidad nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot reglas` "
+				"text": ":robot_face: Si necesitas volver a ver las reglas de la comunidad nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/reglas` "
 			}
 		}
 	]
@@ -520,7 +517,7 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": ":robot_face: Si necesitas volver a ver la lista de canales nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot canales` "
+        "text": ":robot_face: Si necesitas volver a ver la lista de canales nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/canales` "
       }
     }
   ]
@@ -588,7 +585,7 @@ const certificadoRegular = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver cómo descargar el certificado de alumno regular nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot certificado de alumno regular` "
+				"text": ":robot_face: Si necesitas volver a ver cómo descargar el certificado de alumno regular nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/certificado` "
 			}
 		}
 	]
@@ -656,7 +653,7 @@ const situacionAcademica = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver cómo descargar tu situación académica nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot situación académica` "
+				"text": ":robot_face: Si necesitas volver a ver cómo descargar tu situación académica nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/situacionacademica` "
 			}
 		}
 	]
@@ -738,7 +735,7 @@ const comandos = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver la lista de mis comandos nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot comandos` "
+				"text": ":robot_face: Si necesitas volver a ver la lista de mis comandos nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/comandos` "
 			}
 		}
 	]
@@ -827,15 +824,16 @@ const bots = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":robot_face: Si necesitas volver a ver la lista de bots nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot bots` "
+				"text": ":robot_face: Si necesitas volver a ver la lista de bots nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/bots` "
 			}
 		}
 	]
 }
 
-// ARCHIVO PDF
+// Archivos
 const calendarioAcademico = "./public/calendario.pdf";
 
+// Recopila todos los canales y usuarios para usar más adelante en la función de enviar los canales a los todos los usuarios
 (async () => {
   const result = await app.client.users.list({
     token: process.env.SLACK_BOT_TOKEN,
@@ -848,11 +846,55 @@ const calendarioAcademico = "./public/calendario.pdf";
   sendChannels();
 })();
 
+// Enviar canales cuando alguien se une al espacio de Multimedia
 app.event('team_join', async ({ event, client }) => {
   sendMessage(event.user.id);
 });
 
-///// COMANDOS PARA MAIMOBOT ////////////////////////////////////////////////////////
+//// ***** COMANDOS ***** ////
+
+app.command('/reglas', async ({ command, ack, say }) => {
+  await ack();
+  await say(reglas);
+});
+
+app.command('/canales', async ({ command, ack, say }) => {
+  await ack();
+  await say(canales);
+});
+
+app.command('/calendario', async ({ command, ack, say }) => {
+  await ack();
+  await say(calendar);
+  const result = await app.client.files.upload({
+    token: process.env.SLACK_BOT_TOKEN,
+    channels: command.user_id,
+    initial_comment: "Acá te dejo el PDF con toda la información del Calendario Académico del Ciclo Lectivo 2021 :smile:",
+    file: fs.createReadStream(calendarioAcademico)
+  });
+});
+
+app.command('/certificado', async ({ command, ack, say }) => {
+  await ack();
+  await say(certificadoRegular);
+});
+
+app.command('/comandos', async ({ command, ack, say }) => {
+  await ack();
+  await say(comandos);
+});
+
+app.command('/situacionacademica', async ({ command, ack, say }) => {
+  await ack();
+  await say(situacionAcademica);
+});
+
+app.command('/bots', async ({ command, ack, say }) => {
+  await ack();
+  await say(bots);
+});
+
+//// ***** MENSAJES ***** ////
 
 // Reglas
 app.message('reglas', async ({ message, say }) => {
@@ -867,6 +909,7 @@ app.message('canales', async ({ message, say }) => {
 // Fechas importantes de la carrera
 app.message('calendario', async ({ message, say }) => {
   await say(calendar);
+  console.log(message.user);
   const result = await app.client.files.upload({
     token: process.env.SLACK_BOT_TOKEN,
     channels: message.user,
@@ -897,10 +940,12 @@ app.message('bots', async ({ message, say }) => {
 
 ////////////////////////////////////////////////////////
 
+// Enviar mensajes a todos los usuarios con los canales
+
 const sendChannels = () =>{
   users.forEach(user => {
     console.log(user.id)
-    sendMessage(user.id)
+    //sendMessage(user.id)
   })
 }
 
@@ -1187,14 +1232,14 @@ const sendMessage = async (user) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": ":robot_face: Si necesitas volver a ver la lista de canales nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot canales` "
+          "text": ":robot_face: Si necesitas volver a ver la lista de canales nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/canales` "
         }
       }
     ]
   });
 }
 
-///////////////////////////////////// LISTENERS DE ACCIONES PARA LOS BOTONES
+//// ***** LISTENERS DE ACCIONES PARA LOS BOTONES ***** ////
 
 app.action("arteydiseño_button", async ({ ack, say, body, action}) => {
   await ack();
@@ -1292,7 +1337,7 @@ app.action("vr-ar-rx_button", async ({ ack, say, body, action}) => {
   inviteToChannel(user, value);
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////
 
 // Agregar usuario a canal
 const inviteToChannel = async (user, value) =>{
@@ -1374,13 +1419,11 @@ const inviteToChannel = async (user, value) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": ":robot_face: Si necesitas volver a ver las reglas de la comunidad nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `@maimobot reglas` "
+          "text": ":robot_face: Si necesitas volver a ver las reglas de la comunidad nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/reglas` "
         }
       }
     ]
   });
-  console.log(result);
-  console.log(ephemeralMessage);
 }
 
 // Busca y retorna el ID de un canal según el canal que se pase como parametro
