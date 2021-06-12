@@ -644,7 +644,7 @@ const comandos = {
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "COMANDOS DE MAIMO BOT"
+				"text": "COMANDOS DE MULTINEITOR"
 			}
 		},
 		{
@@ -670,42 +670,42 @@ const comandos = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":one: *Situación Académica:* Si querés conocer cómo vas con las materias de la facu podés llamarme escribiendo `@maimobot situación académica`."
+				"text": ":one: *Situación Académica:* Si querés conocer cómo vas con las materias de la facu podés llamarme escribiendo `/situacionacademica`."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":two: *Certificado de alumno regular:* Si querés saber cómo descargar tu certificado de alumno regular podés llamarme escribiendo `@maimobot certificado de alumno regular`."
+				"text": ":two: *Certificado de alumno regular:* Si querés saber cómo descargar tu certificado de alumno regular podés llamarme escribiendo `/certificado`."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":three: *Canales para la comunidad:* Si tenés ganas de unirte a algunos de los canales de la comunidad de Multimedia y no te acordas cuáles eran podés llamarme escribiendo `@maimobot canales`."
+				"text": ":three: *Canales para la comunidad:* Si tenés ganas de unirte a algunos de los canales de la comunidad de Multimedia y no te acordas cuáles eran podés llamarme escribiendo `/canales`."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":four: *Reglas de la comunidad:* Tenemos una serie de reglas para todos los canales del espacio de Multimedia para que todes estemos a gusto. Si te interesa conocerlas podés llamarme escribiendo `@maimobot reglas`."
+				"text": ":four: *Reglas de la comunidad:* Tenemos una serie de reglas para todos los canales del espacio de Multimedia para que todes estemos a gusto. Si te interesa conocerlas podés llamarme escribiendo `/reglas`."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":five: *Calendario académico:* Podés estar al tanto de todo lo que va a pasar durante el ciclo lectivo de este año escribiendo `@maimobot calendario`."
+				"text": ":five: *Calendario académico:* Podés estar al tanto de todo lo que va a pasar durante el ciclo lectivo de este año escribiendo `/calendario`."
 			}
     },
     {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":six: *Bots:* Si te da curiosidad conocer las funciones de los bots que están instalados en el espacio de Multimedia, podés consultarlas escribiendo `@maimobot bots`."
+				"text": ":six: *Bots:* Si te da curiosidad conocer las funciones de los bots que están instalados en el espacio de Multimedia, podés consultarlas escribiendo `/bots`."
 			}
 		},
 		{
@@ -925,7 +925,7 @@ app.message('bots', async ({ message, say }) => {
 const sendChannels = () =>{
   users.forEach(user => {
     console.log(user.id)
-    //sendMessage(user.id)
+    sendMessage(user.id)
   })
 }
 
