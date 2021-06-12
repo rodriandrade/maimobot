@@ -188,42 +188,42 @@ const reglas = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "En este espacio buscamos valorar y potenciar el intercambio de conocimiento entre todes. "
+				"text": "🍀 En este espacio buscamos valorar y potenciar el intercambio de conocimiento entre todes. "
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "Los debates e intercambios deben ser constructivos y de valor para la comunidad."
+				"text": "🌷 Los debates e intercambios deben ser constructivos y de valor para la comunidad."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "Evitemos cualquier falta de respeto o agresión entre nosotres. Todo se puede hablar bien y debatir tranqui."
+				"text": "🍁 Evitemos cualquier falta de respeto o agresión entre nosotres. Todo se puede hablar bien y debatir tranqui."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "Mantengamos los intereses propios del canal para no perder todas las cosas que vayan compartiendo. Cualquier cosa ajena al canal la pueden hablar en el canal correspondiente o por privado muchaches. Acá nos ponemos la gorra."
+				"text": "🌻 Mantengamos los intereses propios del canal para no perder todas las cosas que vayan compartiendo. Cualquier cosa ajena al canal la pueden hablar en el canal correspondiente o por privado muchaches. Acá nos ponemos la gorra 👨‍✈️."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "Ser responsables en cuanto a las cosas que subimos a los canales, que sigan buenos valores y estén alineados a la temática."
+				"text": "🍄 Ser responsables en cuanto a las cosas que subimos a los canales, que sigan buenos valores y estén alineados a la temática."
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "La idea de esto es poder conocernos mejor y construir una hermosa comunidad de alumnes de Multimedia. Compartí, participá, hacete amigue. Cuantos más seamos intercambiando, más cerca estaremos de nuestro objetivo."
+				"text": "🌼 La idea de esto es poder conocernos mejor y construir una hermosa comunidad de alumnes de Multimedia. Compartí, participá, hacete amigue. Cuantos más seamos intercambiando, más cerca estaremos de nuestro objetivo."
 			}
     },
     {
@@ -397,7 +397,7 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": ":mailbox_with_mail: *Oportunidades laborales:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉 . Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+        "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
       },
       "accessory": {
         "type": "button",
@@ -406,8 +406,8 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "oportunidadeslaborales",
-        "action_id": "oportunidadeslaborales_button"
+        "value": "mundolaboral",
+        "action_id": "mundolaboral_button"
       }
     },
     {
@@ -488,26 +488,6 @@ const canales = {
         "style": "primary",
         "value": "sillondelpsicologo",
         "action_id": "sillondelpsicologo_button"
-      }
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": ":zap: *VR - AR - RX:* Para les interesades que quieran meterse o ya tengan conocimientos vengan a este espacio para compartir curiosidades 🤓 , inquietudes 🤔 , proyectos 🥳 , sobre Realidad Virtual, Realidad Aumentada y Realidad Mixta. La vas a flasheeeeAR 🤩  (ba dam tss 🥁 )."
-      },
-      "accessory": {
-        "type": "button",
-        "text": {
-          "type": "plain_text",
-          "text": "Unirse"
-        },
-        "style": "primary",
-        "value": "vr-ar-rx",
-        "action_id": "vr-ar-rx_button"
       }
     },
     {
@@ -1112,7 +1092,7 @@ const sendMessage = async (user) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": ":mailbox_with_mail: *Oportunidades laborales:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉 . Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉 . Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
         },
         "accessory": {
           "type": "button",
@@ -1121,8 +1101,8 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "oportunidadeslaborales",
-          "action_id": "oportunidadeslaborales_button"
+          "value": "mundolaboral",
+          "action_id": "mundolaboral_button"
         }
       },
       {
@@ -1203,26 +1183,6 @@ const sendMessage = async (user) =>{
           "style": "primary",
           "value": "sillondelpsicologo",
           "action_id": "sillondelpsicologo_button"
-        }
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "section",
-        "text": {
-          "type": "mrkdwn",
-          "text": ":zap: *VR - AR - RX:* Para les interesades que quieran meterse o ya tengan conocimientos vengan a este espacio para compartir curiosidades 🤓 , inquietudes 🤔 , proyectos 🥳 , sobre Realidad Virtual, Realidad Aumentada y Realidad Mixta. La vas a flasheeeeAR 🤩  (ba dam tss 🥁 )."
-        },
-        "accessory": {
-          "type": "button",
-          "text": {
-            "type": "plain_text",
-            "text": "Unirse"
-          },
-          "style": "primary",
-          "value": "vr-ar-rx",
-          "action_id": "vr-ar-rx_button"
         }
       },
       {
@@ -1374,42 +1334,42 @@ const inviteToChannel = async (user, value) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "En este espacio buscamos valorar y potenciar el intercambio de conocimiento entre todes. "
+          "text": "🍀 En este espacio buscamos valorar y potenciar el intercambio de conocimiento entre todes. "
         }
       },
       {
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "Los debates e intercambios deben ser constructivos y de valor para la comunidad."
+          "text": "🌷 Los debates e intercambios deben ser constructivos y de valor para la comunidad."
         }
       },
       {
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "Evitemos cualquier falta de respeto o agresión entre nosotres. Todo se puede hablar bien y debatir tranqui."
+          "text": "🍁 Evitemos cualquier falta de respeto o agresión entre nosotres. Todo se puede hablar bien y debatir tranqui."
         }
       },
       {
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "Mantengamos los intereses propios del canal para no perder todas las cosas que vayan compartiendo. Cualquier cosa ajena al canal la pueden hablar en el canal correspondiente o por privado muchaches. Acá nos ponemos la gorra."
+          "text": "🌻 Mantengamos los intereses propios del canal para no perder todas las cosas que vayan compartiendo. Cualquier cosa ajena al canal la pueden hablar en el canal correspondiente o por privado muchaches. Acá nos ponemos la gorra 👨‍✈️."
         }
       },
       {
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "Ser responsables en cuanto a las cosas que subimos a los canales, que sigan buenos valores y estén alineados a la temática."
+          "text": "🍄 Ser responsables en cuanto a las cosas que subimos a los canales, que sigan buenos valores y estén alineados a la temática."
         }
       },
       {
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": "La idea de esto es poder conocernos mejor y construir una hermosa comunidad de alumnes de Multimedia. Compartí, participá, hacete amigue. Cuantos más seamos intercambiando, más cerca estaremos de nuestro objetivo."
+          "text": "🌼 La idea de esto es poder conocernos mejor y construir una hermosa comunidad de alumnes de Multimedia. Compartí, participá, hacete amigue. Cuantos más seamos intercambiando, más cerca estaremos de nuestro objetivo."
         }
       },
       {
