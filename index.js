@@ -377,26 +377,6 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": ":musical_note: *Musiquita:* Alto espacio para compartir curiosidades, producciones, novedades, preguntas o simplemente para spamear tus nuevos temitas."
-      },
-      "accessory": {
-        "type": "button",
-        "text": {
-          "type": "plain_text",
-          "text": "Unirse"
-        },
-        "style": "primary",
-        "value": "musiquita",
-        "action_id": "musiquita_button"
-      }
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
         "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
       },
       "accessory": {
@@ -408,6 +388,26 @@ const canales = {
         "style": "primary",
         "value": "mundolaboral",
         "action_id": "mundolaboral_button"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": ":musical_note: *Musiquita:* Alto espacio para compartir curiosidades, producciones, novedades, preguntas o simplemente para spamear tus nuevos temitas."
+      },
+      "accessory": {
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "Unirse"
+        },
+        "style": "primary",
+        "value": "musiquita",
+        "action_id": "musiquita_button"
       }
     },
     {
@@ -925,7 +925,7 @@ app.message('bots', async ({ message, say }) => {
 const sendChannels = () =>{
   users.forEach(user => {
     console.log(user.id)
-    sendMessage(user.id)
+    //sendMessage(user.id)
   })
 }
 
@@ -1072,6 +1072,26 @@ const sendMessage = async (user) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
+          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+        },
+        "accessory": {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Unirse"
+          },
+          "style": "primary",
+          "value": "mundolaboral",
+          "action_id": "mundolaboral_button"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
           "text": ":musical_note: *Musiquita:* Alto espacio para compartir curiosidades, producciones, novedades, preguntas o simplemente para spamear tus nuevos temitas."
         },
         "accessory": {
@@ -1083,26 +1103,6 @@ const sendMessage = async (user) =>{
           "style": "primary",
           "value": "musiquita",
           "action_id": "musiquita_button"
-        }
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "section",
-        "text": {
-          "type": "mrkdwn",
-          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉 . Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
-        },
-        "accessory": {
-          "type": "button",
-          "text": {
-            "type": "plain_text",
-            "text": "Unirse"
-          },
-          "style": "primary",
-          "value": "mundolaboral",
-          "action_id": "mundolaboral_button"
         }
       },
       {
