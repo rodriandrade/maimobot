@@ -810,6 +810,8 @@ const bots = {
 	]
 }
 
+const memes = ["./public/meme1.jpg", "./public/meme2.jpg", "./public/meme3.jpg", "./public/meme4.jpg", "./public/meme5.jpg", "./public/meme6.jpg"];
+
 // Archivos
 const calendarioAcademico = "./public/calendario.pdf";
 
@@ -872,6 +874,17 @@ app.command('/situacionacademica', async ({ command, ack, say }) => {
 app.command('/bots', async ({ command, ack, say }) => {
   await ack();
   await say(bots);
+});
+
+app.command('/memes', async ({ command, ack, say }) => {
+  await ack();
+  const memeToSend = selectMeme();
+  const result = await app.client.files.upload({
+    token: process.env.SLACK_BOT_TOKEN,
+    channels: command.user_id,
+    initial_comment: "Lo pedis, lo tenés",
+    file: fs.createReadStream(memeToSend)
+  });
 });
 
 //// ***** MENSAJES ***** ////
@@ -1394,6 +1407,15 @@ const findChannel = (channelName) =>{
     }
   })
   return channel.id
+}
+
+const selectMeme = () =>{
+    let selectMeme = memes[random(0, 5)];
+    return selectMeme
+}
+
+const random = (min, max) =>{
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 // Encender server
