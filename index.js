@@ -417,6 +417,26 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
+        "text": "🌱 *Plantitas y naturaleza:* Valor de entrada: Un hijito de tu suculenta."
+      },
+      "accessory": {
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "Unirse"
+        },
+        "style": "primary",
+        "value": "plantitas_y_naturaleza",
+        "action_id": "plantitas_button"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
         "text": ":hatched_chick: *Procrastinación y animalitos:* En este grupo creemos que no hay nada más lindo que ver animalitos y evitar hacer ese TP que tanto te embola 🐶💚🐱."
       },
       "accessory": {
@@ -848,9 +868,10 @@ app.command('/canales', async ({ command, ack, say }) => {
 app.command('/calendario', async ({ command, ack, say }) => {
   await ack();
   await say(calendar);
+  console.log(command)
   const result = await app.client.files.upload({
     token: process.env.SLACK_BOT_TOKEN,
-    channels: command.user_id,
+    channels: command.channel_id,
     initial_comment: "Acá te dejo el PDF con toda la información del Calendario Académico del Ciclo Lectivo 2021 :smile:",
     file: fs.createReadStream(calendarioAcademico)
   });
@@ -881,54 +902,10 @@ app.command('/memes', async ({ command, ack, say }) => {
   const memeToSend = selectMeme();
   const result = await app.client.files.upload({
     token: process.env.SLACK_BOT_TOKEN,
-    channels: command.user_id,
+    channels: command.channel_id,
     initial_comment: "Lo pedis, lo tenés",
     file: fs.createReadStream(memeToSend)
   });
-});
-
-//// ***** MENSAJES ***** ////
-
-// Reglas
-app.message('reglas', async ({ message, say }) => {
-  await say(reglas);
-});
-
-// Canales
-app.message('canales', async ({ message, say }) => {
-  await say(canales);
-});
-
-// Fechas importantes de la carrera
-app.message('calendario', async ({ message, say }) => {
-  await say(calendar);
-  console.log(message.user);
-  const result = await app.client.files.upload({
-    token: process.env.SLACK_BOT_TOKEN,
-    channels: message.user,
-    initial_comment: "Acá te dejo el PDF con toda la información del Calendario Académico del Ciclo Lectivo 2021 :smile:",
-    file: fs.createReadStream(calendarioAcademico)
-  });
-});
-
-// Certificado de alumno regular
-app.message('certificado de alumno regular', async ({ message, say }) => {
-  await say(certificadoRegular);
-});
-
-// Certificado de alumno regular
-app.message('comandos', async ({ message, say }) => {
-  await say(comandos);
-});
-
-// Situación académica
-app.message('situación académica', async ({ message, say }) => {
-  await say(situacionAcademica);
-});
-
-// Bots
-app.message('bots', async ({ message, say }) => {
-  await say(bots);
 });
 
 ////////////////////////////////////////////////////////
@@ -1116,6 +1093,26 @@ const sendMessage = async (user) =>{
           "style": "primary",
           "value": "musiquita",
           "action_id": "musiquita_button"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "🌱 *Plantitas y naturaleza:* Valor de entrada: Un hijito de tu suculenta."
+        },
+        "accessory": {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Unirse"
+          },
+          "style": "primary",
+          "value": "plantitas_y_naturaleza",
+          "action_id": "plantitas_button"
         }
       },
       {
