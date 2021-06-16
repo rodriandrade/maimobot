@@ -171,7 +171,7 @@ const reglas = {
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": ":newspaper:  REGLAS DE LA COMUNIDAD  :newspaper:"
+				"text": "REGLAS DE LA COMUNIDAD"
 			}
 		},
 		{
@@ -286,7 +286,7 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "arteydiseño",
+        "value": "arte-y-diseño",
         "action_id": "arteydiseño_button"
       }
     },
@@ -366,28 +366,8 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "memes",
+        "value": "memes-maimo",
         "action_id": "memes_button"
-      }
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
-      },
-      "accessory": {
-        "type": "button",
-        "text": {
-          "type": "plain_text",
-          "text": "Unirse"
-        },
-        "style": "primary",
-        "value": "mundolaboral",
-        "action_id": "mundolaboral_button"
       }
     },
     {
@@ -417,6 +397,26 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
+        "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+      },
+      "accessory": {
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "Unirse"
+        },
+        "style": "primary",
+        "value": "oportunidades-laborales",
+        "action_id": "mundolaboral_button"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
         "text": "🌱 *Plantitas y naturaleza:* Valor de entrada: Un hijito de tu suculenta."
       },
       "accessory": {
@@ -426,7 +426,7 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "plantitas_y_naturaleza",
+        "value": "plantitas-y-naturaleza",
         "action_id": "plantitas_button"
       }
     },
@@ -446,7 +446,7 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "procrastinacionyanimalitos",
+        "value": "procrastinación-y-animalitos",
         "action_id": "procrastinacionyanimalitos_button"
       }
     },
@@ -466,7 +466,7 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "programacion",
+        "value": "programación-dev",
         "action_id": "programacion_button"
       }
     },
@@ -506,7 +506,7 @@ const canales = {
           "text": "Unirse"
         },
         "style": "primary",
-        "value": "sillondelpsicologo",
+        "value": "sillón-del-psicólogo",
         "action_id": "sillondelpsicologo_button"
       }
     },
@@ -829,6 +829,46 @@ const bots = {
 		}
 	]
 }
+const recursos = {
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "ReReMu - Repositorio de Recursos Multimedia"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"text": "Recursos multimediales recopilados en un sólo lugar.",
+					"type": "mrkdwn"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":cow: Si andás buscando recursos, tips o tutoriales que te ayuden a resolver ese proyecto multimedia que venís desarrollando, paso a comentarte que existe <https://www.reremu.me/|ReReMu>, un repositorio de recursos multimedia desarrollado por alumnos de cuarto año."
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":robot_face: Si necesitas volver a ver cómo ingresar a la lista de recursos nuevamente, acordate que podés consultarme escribiendo :arrow_right:  `/recursos` "
+			}
+		}
+	]
+}
 
 const memes = ["./public/meme1.jpg", "./public/meme2.jpg", "./public/meme3.jpg", "./public/meme4.jpg", "./public/meme5.jpg", "./public/meme6.jpg"];
 const frases = ["A tus órdenes", "Para servirte", "Cualquier otra cosa, ya sabés donde encontrarme", "Ni Alfred era tan servicial"];
@@ -927,6 +967,13 @@ app.command('/memes', async ({ command, ack, say }) => {
   });
 });
 
+app.command('/recursos', async ({ command, ack, say }) => {
+  await ack();
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
+  await say(recursos);
+});
+
 ////////////////////////////////////////////////////////
 
 // Enviar mensajes a todos los usuarios con los canales
@@ -990,7 +1037,7 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "arteydiseño",
+          "value": "arte-y-diseño",
           "action_id": "arteydiseño_button"
         }
       },
@@ -1070,28 +1117,8 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "memes",
+          "value": "memes-maimo",
           "action_id": "memes_button"
-        }
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "section",
-        "text": {
-          "type": "mrkdwn",
-          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
-        },
-        "accessory": {
-          "type": "button",
-          "text": {
-            "type": "plain_text",
-            "text": "Unirse"
-          },
-          "style": "primary",
-          "value": "mundolaboral",
-          "action_id": "mundolaboral_button"
         }
       },
       {
@@ -1121,6 +1148,26 @@ const sendMessage = async (user) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
+          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+        },
+        "accessory": {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Unirse"
+          },
+          "style": "primary",
+          "value": "oportunidades-laborales",
+          "action_id": "mundolaboral_button"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
           "text": "🌱 *Plantitas y naturaleza:* Valor de entrada: Un hijito de tu suculenta."
         },
         "accessory": {
@@ -1130,7 +1177,7 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "plantitas_y_naturaleza",
+          "value": "plantitas-y-naturaleza",
           "action_id": "plantitas_button"
         }
       },
@@ -1150,7 +1197,7 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "procrastinacionyanimalitos",
+          "value": "procrastinación-y-animalitos",
           "action_id": "procrastinacionyanimalitos_button"
         }
       },
@@ -1170,7 +1217,7 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "programacion",
+          "value": "programación-dev",
           "action_id": "programacion_button"
         }
       },
@@ -1210,7 +1257,7 @@ const sendMessage = async (user) =>{
             "text": "Unirse"
           },
           "style": "primary",
-          "value": "sillondelpsicologo",
+          "value": "sillón-del-psicólogo",
           "action_id": "sillondelpsicologo_button"
         }
       },
@@ -1234,31 +1281,7 @@ app.action("arteydiseño_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Arte y diseño :art:`);
-  inviteToChannel(user, value);
-});
-
-app.action("recetas_button", async ({ ack, say, body, action}) => {
-  await ack();
-  let value = action.value;
-  let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Recetas :cookie:`);
-  inviteToChannel(user, value);
-});
-
-app.action("programacion_button", async ({ ack, say, body, action}) => {
-  await ack();
-  let value = action.value;
-  let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Programación :technologist:`);
-  inviteToChannel(user, value);
-});
-
-app.action("memes_button", async ({ ack, say, body, action}) => {
-  await ack();
-  let value = action.value;
-  let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Memes :laughing:`);
+  await say(`Todo listo, ya te sumé al canal de Arte y diseño :art::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1266,7 +1289,7 @@ app.action("cine_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Cine`);
+  await say(`Todo listo, ya te sumé al canal de Cine :movie_camera::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1274,23 +1297,24 @@ app.action("gaming_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Gaming`);
+  await say(`Todo listo, ya te sumé al canal de Gaming :video_game::white_check_mark:`);
   inviteToChannel(user, value);
 });
+
 
 app.action("literatura_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Literatura`);
+  await say(`Todo listo, ya te sumé al canal de Literatura :books::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
-app.action("musiquita_button", async ({ ack, say, body, action}) => {
+app.action("memes_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Musiquita`);
+  await say(`Todo listo, ya te sumé al canal de Memes :laughing::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1298,7 +1322,23 @@ app.action("oportunidadeslaborales_button", async ({ ack, say, body, action}) =>
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Oportunidades Laborales`);
+  await say(`Todo listo, ya te sumé al canal de Oportunidades Laborales :mailbox_with_mail::white_check_mark:`);
+  inviteToChannel(user, value);
+});
+
+app.action("musiquita_button", async ({ ack, say, body, action}) => {
+  await ack();
+  let value = action.value;
+  let user = body.user.id;
+  await say(`Todo listo, ya te sumé al canal de Musiquita :musical_note::white_check_mark:`);
+  inviteToChannel(user, value);
+});
+
+app.action("plantitas_button", async ({ ack, say, body, action}) => {
+  await ack();
+  let value = action.value;
+  let user = body.user.id;
+  await say(`Todo listo, ya te sumé al canal de Plantitas y Naturaleza :seedling::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1306,7 +1346,23 @@ app.action("procrastinacionyanimalitos_button", async ({ ack, say, body, action}
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Oportunidades Laborales`);
+  await say(`Todo listo, ya te sumé al canal de Procrastinación y Animalitos :hatched_chick::white_check_mark:`);
+  inviteToChannel(user, value);
+});
+
+app.action("programacion_button", async ({ ack, say, body, action}) => {
+  await ack();
+  let value = action.value;
+  let user = body.user.id;
+  await say(`Todo listo, ya te sumé al canal de Programación :computer::white_check_mark:`);
+  inviteToChannel(user, value);
+});
+
+app.action("recetas_button", async ({ ack, say, body, action}) => {
+  await ack();
+  let value = action.value;
+  let user = body.user.id;
+  await say(`Todo listo, ya te sumé al canal de Recetas :knife_fork_plate::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1314,17 +1370,10 @@ app.action("sillondelpsicologo_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de Sillón del Psicólogo`);
+  await say(`Todo listo, ya te sumé al canal de Sillón del Psicólogo :couch_and_lamp::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
-app.action("vr-ar-rx_button", async ({ ack, say, body, action}) => {
-  await ack();
-  let value = action.value;
-  let user = body.user.id;
-  await say(`Todo listo, ya te sume al canal de VR-AR-RX`);
-  inviteToChannel(user, value);
-});
 
 /////////////////////////////////////////////////
 
@@ -1346,7 +1395,7 @@ const inviteToChannel = async (user, value) =>{
         "type": "header",
         "text": {
           "type": "plain_text",
-          "text": ":newspaper:  REGLAS DE LA COMUNIDAD  :newspaper:"
+          "text": "REGLAS DE LA COMUNIDAD"
         }
       },
       {
