@@ -732,7 +732,7 @@ const comandos = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ":seven: *Recursos:* Si te da curiosidad conocer las funciones de los bots que están instalados en el espacio de Multimedia, podés consultarlas escribiendo `/bots`."
+				"text": ":seven: *Recursos:* Si querés conocer el repositorio de recursos multimedia creado por alumnos de cuarto de año, podés consultarlas escribiendo `/recursos`."
 			}
 		},
 		{
