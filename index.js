@@ -831,6 +831,7 @@ const bots = {
 }
 
 const memes = ["./public/meme1.jpg", "./public/meme2.jpg", "./public/meme3.jpg", "./public/meme4.jpg", "./public/meme5.jpg", "./public/meme6.jpg"];
+const frases = ["A tus órdenes", "Para servirte", "Cualquier otra cosa, ya sabés donde encontrarme", "Ni Alfred era tan servicial"];
 
 // Archivos
 const calendarioAcademico = "./public/calendario.pdf";
@@ -858,19 +859,22 @@ app.event('team_join', async ({ event, client }) => {
 app.command('/reglas', async ({ command, ack, say }) => {
   console.log(command);
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(reglas);
 });
 
 app.command('/canales', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(canales);
 });
 
 app.command('/calendario', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(calendar);
   console.log(command)
   const result = await app.client.files.upload({
@@ -883,31 +887,37 @@ app.command('/calendario', async ({ command, ack, say }) => {
 
 app.command('/certificado', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  console.log(messageToSend);
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(certificadoRegular);
 });
 
 app.command('/comandos', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(comandos);
 });
 
 app.command('/situacionacademica', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(situacionAcademica);
 });
 
 app.command('/bots', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   await say(bots);
 });
 
 app.command('/memes', async ({ command, ack, say }) => {
   await ack();
-  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
+  let messageToSend = selectMessage();
+  await say(`${messageToSend}, <@${command.user_id}> :blush:`);
   const memeToSend = selectMeme();
   const result = await app.client.files.upload({
     token: process.env.SLACK_BOT_TOKEN,
@@ -1418,6 +1428,11 @@ const findChannel = (channelName) =>{
 const selectMeme = () =>{
     let selectMeme = memes[random(0, 5)];
     return selectMeme
+}
+
+const selectMessage = () =>{
+    let message = frases[random(0, 3)];
+    return message
 }
 
 const random = (min, max) =>{
