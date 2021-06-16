@@ -856,17 +856,21 @@ app.event('team_join', async ({ event, client }) => {
 //// ***** COMANDOS ***** ////
 
 app.command('/reglas', async ({ command, ack, say }) => {
+  console.log(command);
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(reglas);
 });
 
 app.command('/canales', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(canales);
 });
 
 app.command('/calendario', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(calendar);
   console.log(command)
   const result = await app.client.files.upload({
@@ -879,26 +883,31 @@ app.command('/calendario', async ({ command, ack, say }) => {
 
 app.command('/certificado', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(certificadoRegular);
 });
 
 app.command('/comandos', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(comandos);
 });
 
 app.command('/situacionacademica', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(situacionAcademica);
 });
 
 app.command('/bots', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   await say(bots);
 });
 
 app.command('/memes', async ({ command, ack, say }) => {
   await ack();
+  await say(`A sus ordenes, <@${command.user_id}> :zap:`);
   const memeToSend = selectMeme();
   const result = await app.client.files.upload({
     token: process.env.SLACK_BOT_TOKEN,
