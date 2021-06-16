@@ -397,7 +397,7 @@ const canales = {
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+        "text": ":mailbox_with_mail: *Oportunidades laborales:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
       },
       "accessory": {
         "type": "button",
@@ -726,6 +726,13 @@ const comandos = {
 			"text": {
 				"type": "mrkdwn",
 				"text": ":six: *Bots:* Si te da curiosidad conocer las funciones de los bots que están instalados en el espacio de Multimedia, podés consultarlas escribiendo `/bots`."
+			}
+    },
+    {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":seven: *Recursos:* Si te da curiosidad conocer las funciones de los bots que están instalados en el espacio de Multimedia, podés consultarlas escribiendo `/bots`."
 			}
 		},
 		{
@@ -1148,7 +1155,7 @@ const sendMessage = async (user) =>{
         "type": "section",
         "text": {
           "type": "mrkdwn",
-          "text": ":mailbox_with_mail: *Mundo laboral:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
+          "text": ":mailbox_with_mail: *Oportunidades laborales:* En este espacio se AGARRA LA PALA o al menos vamos a intentar ayudarte en eso 😉. Estate atento a las oportunidades laborales que puedan surgir o tips para entrevistas, currículums y portfolios."
         },
         "accessory": {
           "type": "button",
