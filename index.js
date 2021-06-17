@@ -786,20 +786,6 @@ const bots = {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "*<https://carrerademultimedia.slack.com/apps/A6WH0KSPQ-lasso|Lasso>:* guarda los links que son enviados en los canales para que no se pierdan."
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "*<https://carrerademultimedia.slack.com/apps/A8NB3C538-music-digest|Music Digest>:* crea playlists con las canciones que son enviadas en el canal.."
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
 				"text": "*<https://carrerademultimedia.slack.com/apps/A0QAZV90X-birthdaybot|Birthday Bot>:* consulta a todes les usuaries cuando es su cumpleaños, para así, en ese día, enviar un mensaje con saludo por el canal general para que toda la comunidad pueda saludar a quien cumple años."
 			}
 		},
