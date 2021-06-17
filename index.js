@@ -1288,7 +1288,7 @@ app.action("arteydiseño_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Arte y diseño :art::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Arte y diseño :art::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1296,7 +1296,7 @@ app.action("cine_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Cine :movie_camera::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Cine :movie_camera::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1304,7 +1304,7 @@ app.action("gaming_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Gaming :video_game::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Gaming :video_game::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1313,7 +1313,7 @@ app.action("literatura_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Literatura :books::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Literatura :books::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1321,7 +1321,7 @@ app.action("memes_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Memes :laughing::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Memes :laughing::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1329,7 +1329,7 @@ app.action("oportunidadeslaborales_button", async ({ ack, say, body, action}) =>
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Oportunidades Laborales :mailbox_with_mail::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Oportunidades Laborales :mailbox_with_mail::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1337,7 +1337,7 @@ app.action("musiquita_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Musiquita :musical_note::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Musiquita :musical_note::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1345,7 +1345,7 @@ app.action("plantitas_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Plantitas y Naturaleza :seedling::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Plantitas y Naturaleza :seedling::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1353,7 +1353,7 @@ app.action("procrastinacionyanimalitos_button", async ({ ack, say, body, action}
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Procrastinación y Animalitos :hatched_chick::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Procrastinación y Animalitos :hatched_chick::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1361,7 +1361,7 @@ app.action("programacion_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Programación :computer::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Programación :computer::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1369,7 +1369,7 @@ app.action("recetas_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Recetas :knife_fork_plate::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Recetas :knife_fork_plate::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
@@ -1377,7 +1377,7 @@ app.action("sillondelpsicologo_button", async ({ ack, say, body, action}) => {
   await ack();
   let value = action.value;
   let user = body.user.id;
-  await say(`Todo listo, ya te sumé al canal de Sillón del Psicólogo :couch_and_lamp::white_check_mark:`);
+  await say(`Todo listo, <@${command.user_id}>, ya te sumé al canal de Sillón del Psicólogo :couch_and_lamp::white_check_mark:`);
   inviteToChannel(user, value);
 });
 
