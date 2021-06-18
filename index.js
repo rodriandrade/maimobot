@@ -973,7 +973,6 @@ app.command('/recursos', async ({ command, ack, say }) => {
 
 const sendChannels = () =>{
   users.forEach(user => {
-    console.log(user.id)
     //sendMessage(user.id)
   })
 }
