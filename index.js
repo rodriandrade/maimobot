@@ -974,7 +974,7 @@ app.command('/recursos', async ({ command, ack, say }) => {
 const sendChannels = () =>{
   users.forEach(user => {
     console.log(user.id)
-    //sendMessage(user.id)
+    sendMessage(user.id)
   })
 }
 
@@ -1293,7 +1293,6 @@ app.action("gaming_button", async ({ ack, say, body, action}) => {
   await say(`Todo listo, <@${body.user.id}>, ya te sumé al canal de Gaming :video_game::white_check_mark:`);
   inviteToChannel(user, value);
 });
-
 
 app.action("literatura_button", async ({ ack, say, body, action}) => {
   await ack();
